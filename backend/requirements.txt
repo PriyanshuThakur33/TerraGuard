@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pandas
+numpy
+joblib
+scikit-learn
+tensorflow>=2.15.0
+xgboost
+openpyxl
+python-dotenv

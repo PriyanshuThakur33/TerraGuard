@@ -1,0 +1,8 @@
+{
+    "features": ["TI", "Ax", "Ay", "Az"],
+    "base_models": [
+        "regression_rf.pkl",
+        "regression_xgb.pkl",
+        "regression_dt.pkl"
+    ]
+}
