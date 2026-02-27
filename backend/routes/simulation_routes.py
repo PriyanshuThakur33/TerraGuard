@@ -25,10 +25,11 @@ class_meta = os.path.join(repo_root, "models", "classification", "classification
 reg_meta_path = os.path.join(repo_root, "models", "regression", "regression_meta_lstm.h5")
 reg_meta_json = os.path.join(repo_root, "models", "regression", "regression_metadata.json")
 
-# Default dataset files provided by user (absolute paths)
-DEFAULT_CLASSIFICATION_XLSX = r"C:\Users\priya\OneDrive\Desktop\IIT Mandi\Data\classification_data.csv"
-DEFAULT_REGRESSION_TRAIN_XLSX = r"C:\Users\priya\OneDrive\Desktop\IIT Mandi\Data\regression_train.xlsx"
-DEFAULT_REGRESSION_TEST_XLSX = r"C:\Users\priya\OneDrive\Desktop\IIT Mandi\Data\regression_test.xlsx"
+# Default dataset files — relative to backend/data/ (works locally and on Render)
+_data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
+DEFAULT_CLASSIFICATION_XLSX = os.path.abspath(os.path.join(_data_dir, "classification_data.csv"))
+DEFAULT_REGRESSION_TRAIN_XLSX = os.path.abspath(os.path.join(_data_dir, "regression_train.xlsx"))
+DEFAULT_REGRESSION_TEST_XLSX = os.path.abspath(os.path.join(_data_dir, "regression_test.xlsx"))
 
 class_model = ClassificationModel(model_path=class_model_path, scaler_path=None)
 
